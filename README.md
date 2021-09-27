@@ -11,8 +11,8 @@ bringing tons of USB sticks with you.
 ## What this package do
 
 1. Add a pre-transaction hook to make sure you have inserted your USB stick before upgrading kernel. 
-2. Add a post-transaction hook to rename your kernel file basing on hostname, to avoid conflicting with other installations. 
-3. Add a new mkinitcpio preset, TODO: find a way to change pkgbase in mkinitcpio-install
+2. Add a post-transaction hook to rename your kernel file basing on hostname, to avoid conflicting with other installations. And learn from `/usr/share/libalpm/scripts/mkinitcpio-install`, to find and modify the `pkgbase` file to add a hostname.
+3. Add a new mkinitcpio preset basing on hostname.  
 4. Modify `/etc/default/grub` to allow external script to manage kernel parameters. 
 5. Add a post-transaction hook after `grub-mkconfig`, to automatically set kernel parameters for every boot entry. 
 
