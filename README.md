@@ -28,3 +28,7 @@ only supports grub
 
 only supports arch-based distributions. Tested on Arch Linux and Manjaro Linux. 
 
+## notes
+
+depends on: sed, bash, 
+

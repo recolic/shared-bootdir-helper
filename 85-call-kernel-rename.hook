@@ -1,0 +1,12 @@
+[Trigger]
+Type = Path
+Operation = Install
+Operation = Upgrade
+Target = usr/lib/modules/*/vmlinuz
+
+[Action]
+Description = Invoking hook-kernel-rename.sh to allow multiboot with different kparam...
+When = PostTransaction
+Exec = /usr/share/libalpm/scripts/hook-kernel-rename.sh
+NeedsTargets
+
