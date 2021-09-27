@@ -1,5 +1,7 @@
 # Shared bootdir helper
 
+Background: <https://recolic.net/blog/post/deniable-encryption-and-shared-boot-partition>
+
 ## Problem to solve
 
 You may have multiple linux installations, and they want to share the same `/boot` directory. 
