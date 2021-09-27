@@ -1,0 +1,14 @@
+#!/bin/bash
+
+post_install() {
+    echo "***********************************shared-bootdir-helper**************************************"
+    echo "If you want to boot each kernel with different kernel parameters, "
+    echo "  you need to use the tool 'shared-bootdir-helper-multi-kparam'. "
+    echo "  PLEASE read README.md to learn what should you do. "
+    echo ""
+    echo "If you're ok to boot each kernel with the same kernel parameters (in /etc/default/grub), "
+    echo "  you need to do nothing. "
+    echo "**********************************************************************************************"
+}
+
+

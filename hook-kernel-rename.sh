@@ -35,9 +35,10 @@ while read -r line; do
         continue
     fi
 
-    # Generates a filename for the kernel, and limit the length
+    # Generates a filename for the kernel, and limit the length, convert to lowercase
     new_pkgbase="${pkgbase}-$(hostname)"
     new_pkgbase="${new_pkgbase:0:63}"
+    new_pkgbase="${new_pkgbase,,}" # since bash 4.0
 
     # Generate mkinitcpio presets
     generate_mkinitcpio_preset "${new_pkgbase}" && 
