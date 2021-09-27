@@ -12,19 +12,15 @@ arch=("any")
 depends=("bash" "sed" "grep" "mkinitcpio")
 install="$pkgname.install"
 source=(
-    "$pkgname-$pkgver.tar.gz::$url/archive/v$pkgver.tar.gz"
-    "$pkgname-$pkgver.tar.gz.sig::$url/releases/download/v$pkgver/v$pkgver.tar.gz.sig"
+    "$pkgname::git+https://git.recolic.net/root/$pkgname.git"
 )
 validpgpkeys=("6861D89984E7887F0FFE6E08C344D5EAE3933636")
 sha256sums=(
     "SKIP"
-    "SKIP"
 )
 
 package() {
-    echo "DO NOT INSTALL ME! it's not finished..."
-    return 1
-
+    cd "$pkgname"
     mkdir -p "$pkgdir/etc" "$pkgdir/usr/bin" "$pkgdir/usr/share/libalpm/hooks" &&
     cp src/*.cfg "$pkgdir/etc/" &&
     cp src/*.sh "$pkgdir/usr/bin/" &&
