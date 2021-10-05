@@ -21,10 +21,11 @@ sha256sums=(
 
 package() {
     cd "$pkgname"
-    mkdir -p "$pkgdir/etc" "$pkgdir/usr/bin" "$pkgdir/usr/share/libalpm/hooks" &&
-    cp src/*.cfg "$pkgdir/etc/" &&
-    cp src/*.sh "$pkgdir/usr/bin/" &&
-    cp src/*.hook "$pkgdir/usr/share/libalpm/hooks/" ||
+    mkdir -p "$pkgdir/etc" "$pkgdir/usr/bin" "$pkgdir/usr/share/libalpm/hooks" "$pkgdir/usr/share/libalpm/scripts" &&
+    mv src/*.cfg "$pkgdir/etc/" &&
+    mv src/hook-*.sh "$pkgdir/usr/share/libalpm/scripts/" &&
+    mv src/*.sh "$pkgdir/usr/bin/" &&
+    mv src/*.hook "$pkgdir/usr/share/libalpm/hooks/" ||
     return $?
 }
 

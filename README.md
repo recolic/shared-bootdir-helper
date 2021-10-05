@@ -34,6 +34,18 @@ This package will do NOTHING if you skipped the configuration.
 1. Modify `/etc/default/grub`, to set `GRUB_CMDLINE_LINUX_DEFAULT="__KERNEL_PARAMETER_MANAGED_BY_HELPER"`. 
 2. Modify file `/etc/shared-bootdir-helper-multi-kparam.cfg`, to set kernel parameters for each hostname. 
 
+## Usage
+
+Firstly, install this package. 
+
+Secondly, if you only want to solve problem 1, you do nothing in this step. If you want to solve problem 2, follow the "What should you do" guide in Problem2. 
+
+Thirdly, you must re-install your kernel. You may want to run `pacman -S linux`, `pacman -S linux-lts`, `pacman -S linux-surface`, or something like this. 
+
+Lastly, you need to run `grub-mkconfig -o /boot/grub/grub.cfg` again. Now you have successfully configured this tool! Enjoy and forget it! 
+
+You need to do nothing while upgrading your kernel in the future, because the kimage filename would not be changed. Just do what you usually do. 
+
 ## Support status
 
 ### Distributions

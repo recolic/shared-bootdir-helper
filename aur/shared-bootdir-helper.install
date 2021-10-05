@@ -2,12 +2,13 @@
 
 post_install() {
     echo "***********************************shared-bootdir-helper**************************************"
+    echo "ATTENTION! You need to re-install kernel, and re-run grub-mkconfig to make me working. "
+    echo "  you can read https://git.recolic.net/root/shared-bootdir-helper for more information. "
+    echo ""
+    echo "What's more: "
     echo "If you want to boot each kernel with different kernel parameters, "
     echo "  you need to use the tool 'shared-bootdir-helper-multi-kparam'. "
-    echo "  You MUST read https://git.recolic.net/root/shared-bootdir-helper "
-    echo ""
-    echo "If you're ok to boot each kernel with the same kernel parameters (in /etc/default/grub), "
-    echo "  you need to do nothing. "
+    echo "  You MUST read https://git.recolic.net/root/shared-bootdir-helper in this case. "
     echo "**********************************************************************************************"
 }
 
