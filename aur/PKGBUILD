@@ -3,7 +3,7 @@
 # Mirror: https://github.com/recolic/shared-bootdir-helper
 
 pkgname=shared-bootdir-helper
-pkgver=1.0
+pkgver=1.1
 pkgrel=1
 pkgdesc="Allow multiple linux installations to share the same /boot directory, even with different kernel parameters. "
 url="https://git.recolic.net/root/$pkgname"
