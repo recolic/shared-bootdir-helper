@@ -24,21 +24,17 @@ GRUB is managing kernel parameters.
 
 - What does this package do for you
 
-1. Provide a tool to modify the generated `/boot/grub/grub.cfg`. 
-2. Add a post-transaction hook after `grub-mkconfig`, to automatically run that tool for you. 
-
-This package will do NOTHING if you skipped the configuration.
+Modify `/usr/bin/grub-mkconfig` and add a post-transaction hook after `grub-mkconfig`, to automatically modify /boot/grub/grub.cfg for you. 
 
 - What should you do
 
-1. Modify `/etc/default/grub`, to set `GRUB_CMDLINE_LINUX_DEFAULT="__KERNEL_PARAMETER_MANAGED_BY_HELPER"`. 
-2. Modify file `/etc/shared-bootdir-helper-multi-kparam.cfg`, to set kernel parameters for each hostname. 
+Modify file `/etc/shared-bootdir-helper-multi-kparam.cfg`, to set kernel parameters for each hostname. 
 
 ## Usage
 
 Firstly, install this package. 
 
-Secondly, if you only want to solve problem 1, you do nothing in this step. If you want to solve problem 2, follow the "What should you do" guide in Problem2. 
+Secondly, modify `/etc/shared-bootdir-helper-multi-kparam.cfg` to solve problem 2. 
 
 Thirdly, you must re-install your kernel. You may want to run `pacman -S linux`, `pacman -S linux-lts`, `pacman -S linux-surface`, or something like this. 
 
