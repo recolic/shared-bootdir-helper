@@ -5,7 +5,7 @@
 while true; do
     mount | cut -d ' ' -f 3 | grep '^/boot$' > /dev/null && break
     [[ $warned = 1 ]] || ! echo "Please mount /boot BEFORE upgrading kernel. Waiting for mounting..." >&2 || warned=1
-    echo -n .
+    echo -n . >&2
     sleep 4
 done
 
