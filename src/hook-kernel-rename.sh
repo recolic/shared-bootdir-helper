@@ -44,7 +44,7 @@ while read -r line; do
     generate_mkinitcpio_preset "${new_pkgbase}" && 
 
     # Rename vmlinuz
-    mv "/boot/vmlinuz-${pkgbase}" "/boot/vmlinuz-${new_pkgbase}" && 
+    cp "/$line" "/boot/vmlinuz-${new_pkgbase}" && 
 
     # Overwrite /usr/lib/modules/.../pkgbase to make mkinitcpio-install use the new filename
     echo "${new_pkgbase}" > "${line%/vmlinuz}/pkgbase" && 
