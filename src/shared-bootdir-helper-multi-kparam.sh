@@ -22,7 +22,7 @@ inputfile="$1"
 
 while IFS= read -r line; do
     matched=0
-    if [[ "$line" == *"\tlinux\t/"* ]]; then
+    if [[ "$line" == *"$(printf "\tlinux\t/")"* ]]; then
         for hostname in "${!map_hostname_to_kparam[@]}"; do
             # Assuming that, the kimg filename contains "vmlinuz-xxx-$hostname ", in lowercase. That's important! 
             [[ "$line" == *"-$hostname "* ]] &&
