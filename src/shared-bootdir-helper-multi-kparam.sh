@@ -30,7 +30,7 @@ while IFS= read -r line; do
                 matched=1 && 
                 break
         done
-        [[ $matched == 0 ]] && echo "Warning: kernel line '$line' doesnt match ANY entry in /etc/shared-bootdir-helper-multi-kparam.cfg" && exit 2
+        [[ $matched == 0 ]] && echo "Warning: kernel line '$line' doesnt match ANY entry in /etc/shared-bootdir-helper-multi-kparam.cfg"
     fi
     [[ $matched == 0 ]] && echo "$line" >> "$tmpfile"
 done < "$inputfile" || exit $?
