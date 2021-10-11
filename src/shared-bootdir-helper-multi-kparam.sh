@@ -26,7 +26,7 @@ while IFS= read -r line; do
         for hostname in "${!map_hostname_to_kparam[@]}"; do
             # Assuming that, the kimg filename contains "vmlinuz-xxx-$hostname ", in lowercase. That's important! 
             [[ "$line" == *"-$hostname "* ]] &&
-                echo "$line" | sed "s|-$hostname .*$|-$hostname ${map_kimage_to_kparam[$hostname]}|g" >> "$tmpfile" &&
+                echo "$line" | sed "s|-$hostname .*$|-$hostname ${map_hostname_to_kparam[$hostname]}|g" >> "$tmpfile" &&
                 matched=1 && 
                 break
         done
