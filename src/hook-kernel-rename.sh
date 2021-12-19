@@ -36,7 +36,7 @@ while read -r line; do
     fi
 
     # Generates a filename for the kernel, and limit the length, convert to lowercase
-    new_pkgbase="${pkgbase}-$(cat /etc/hostname)"
+    new_pkgbase="${pkgbase}-$(hostname 2>/dev/null || cat /etc/hostname)"
     new_pkgbase="${new_pkgbase:0:63}"
     new_pkgbase="${new_pkgbase,,}" # since bash 4.0
 
