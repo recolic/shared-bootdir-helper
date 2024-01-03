@@ -51,5 +51,8 @@ while read -r line; do
 
     echo "Renamed pkgbase from $pkgbase to $new_pkgbase successfully. " 1>&2 || 
     exit $? # Crash on error
+
+    # Remove old mkinitcpio presets
+    [[ -f "/etc/mkinitcpio.d/${pkgbase}.preset" ]] && mv "/etc/mkinitcpio.d/${pkgbase}.preset" "/etc/mkinitcpio.d/${pkgbase}.preset.pacsave" && echo "Did old mkinitcpio.preset cleanup."
 done
 

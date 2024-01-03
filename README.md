@@ -1,12 +1,14 @@
 # Shared bootdir helper
 
+> Sharing the same `/boot` between multiple linux installations.
+
 Background: <https://recolic.net/blog/post/deniable-encryption-and-shared-boot-partition>
 
-You may have multiple linux installations, and they want to share the same `/boot` directory. 
-However, each of them want different kernel paramters. 
+You have multiple linux installations, with the same `/boot`. 
+However, each of them want different kernel paramters.
 
 This scenario usually appears while you want to deniable-encrypt all your computers, without 
-bringing tons of USB sticks with you. 
+bringing many USB sticks with you. 
 
 ## Problem1 - multiple installations may share the same vmlinuz filename
 
