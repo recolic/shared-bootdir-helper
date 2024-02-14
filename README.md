@@ -58,3 +58,6 @@ only supports grub. This only matters if you're using `shared-bootdir-helper-mul
 
 depends on: sed, bash, 
 
+## WARNING
+
+DO NOT upgrade cryptsetup to 2.7.0. It will force using new hash function, and break your existing dm-crypt setup.
