@@ -53,6 +53,6 @@ while read -r line; do
     exit $? # Crash on error
 
     # Remove old mkinitcpio presets
-    [[ -f "/etc/mkinitcpio.d/${pkgbase}.preset" ]] && mv "/etc/mkinitcpio.d/${pkgbase}.preset" "/etc/mkinitcpio.d/${pkgbase}.preset.pacsave" && echo "Did old mkinitcpio.preset cleanup."
+    [[ -f "/etc/mkinitcpio.d/${pkgbase}.preset" ]] && mv "/etc/mkinitcpio.d/${pkgbase}.preset" "/etc/mkinitcpio.d/${pkgbase}.preset.pacsave" && echo "Did old mkinitcpio.preset cleanup." || true
 done
 
